@@ -1,4 +1,4 @@
-% MasterLord utilizes parallel computing in Matlab in order to run 1000 iterations of MasterCost on a dataset of images.
+% main utilizes parallel computing in Matlab in order to run 1000 iterations of MasterCost on a dataset of images.
 
 clear; clc
 datanum = 3;
