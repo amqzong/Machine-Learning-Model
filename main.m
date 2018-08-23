@@ -1,4 +1,7 @@
-% main utilizes parallel computing in Matlab in order to run 1000 iterations of MasterCost on a dataset of images.
+% main.m
+% Amanda Zong
+% Takes in a matrix of biomarker features named "Matrix_Out," runs machine learning algorithms on the matrix by calling
+% the helper method "MasterCost," and plots the resulting ROC curve.
 
 clear; clc
 datanum = 3;
