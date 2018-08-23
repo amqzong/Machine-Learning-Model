@@ -10,11 +10,11 @@ For more information on the project and results, see the paper attached entitled
 
 # Main Files
 
-#Name: main.m#
+**Name: main.m**
 
 Description: Takes in a matrix of biomarker features named "Matrix_Out" and runs a bagging classification model on it, by calling an ensemble of machine learning algorithms on the matrix in the helper method "MasterCost" in multiple iterations.  For each image, the probability scores from all the iterations were averaged for the final probability of melanoma for each image. The final probabilities were then compared with the standard histopathologic diagnoses for the 112 images. This comparison was used to plot a receiver operating characteristic (ROC) curve. The optimal threshold for classifying melanoma was determined by choosing the highest specificity at 98% sensitivity.
 
-#Name: MasterCost.m#
+**Name: MasterCost.m**
 
 Description: Computes the machine learning parameters for 5 algorithms (logistic regression, neural networks, 
 support-vector machines, decision trees, and random forest) from a training set of images and tests the 
