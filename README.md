@@ -4,9 +4,9 @@
 
 Takes in a matrix of features computed for a dataset of skin lesion images, trains and tests an ensemble of machine learning algorithms on the dataset, and outputs the accuracy of the machine learning model by plotting an ROC curve and computing accuracy statistics.
 
-# Note
+This code was written for a project to create a diagnostic app for melanoma. The code for the app has also been posted in an repository on Github entitled "melanoma-diagnostic-app." The project was conducted from Summer 2016 to Summer 2017 at Rockefeller University in the Laboratory for Investigative Dermatology under the mentorship of Dr. Daniel Gareau. Many of the algorithms used to extract the features for each skin lesion image were developed by Dr. Gareau and are not included here. 
 
-Many of the algorithms used to extract the features for each skin lesion image were developed by Dr. Daniel Gareau (Laboratory for Investigative Dermatology at Rockefeller University) and are not included here.
+For more information on the project and results, see the paper attached entitled "Novel Screening Test for Melanoma Based on Computational Image Analysis."
 
 # Main Files
 
