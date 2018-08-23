@@ -1,3 +1,21 @@
-#main: This script is the master code. It makes use of "parfor," a parallel computing tool on Matlab, in order to run 1000 iterations of the machine learning model by calling upon the script "MasterCost" in each iteration. In each iteration, 70% of the images were randomly selected as the training set, while the remaining 30% of the images were used as the test set to evaluate the parameters determined from running the algorithms on the training set. For each image, the probability scores from all the iterations were averaged for the final probability of melanoma for each image. The final probabilities were then compared with the standard histopathologic diagnoses for the 112 images. This comparison was used to plot a receiver operating characteristic (ROC) curve. The optimal threshold for classifying melanoma was determined by choosing the highest specificity at 98% sensitivity.
+# Melanoma Diagnosis Classificaton Model
 
-#MasterCost: This script contains the code for the 5 machine learning algorithms: logistic regression, neural networks, support vector machines (SVM), decision trees, and random forest (Figure 3). Logistic regression and neural networks were manually coded for.
+# Description
+
+Takes in a matrix of features computed for a dataset of skin lesion images, trains and tests an ensemble of machine learning algorithms on the dataset, and outputs the accuracy of the machine learning model by plotting an ROC curve and computing accuracy statistics.
+
+# Note
+
+Many of the algorithms used to extract the features for each skin lesion image were developed by Dr. Daniel Gareau (Laboratory for Investigative Dermatology at Rockefeller University) and are not included here.
+
+# Main Files
+
+# Name: main.m #
+
+Description: Takes in a matrix of biomarker features named "Matrix_Out" and runs a bagging classification model on it, by calling an ensemble of machine learning algorithms on the matrix in the helper method "MasterCost" in multiple iterations.  For each image, the probability scores from all the iterations were averaged for the final probability of melanoma for each image. The final probabilities were then compared with the standard histopathologic diagnoses for the 112 images. This comparison was used to plot a receiver operating characteristic (ROC) curve. The optimal threshold for classifying melanoma was determined by choosing the highest specificity at 98% sensitivity.
+
+# Name: MasterCost.m #
+
+Description: Computes the machine learning parameters for 5 algorithms (logistic regression, neural networks, 
+support-vector machines, decision trees, and random forest) from a training set of images and tests the 
+parameters on a test set in order to evaluate sensitivity, specificity, and overall accuray. 
