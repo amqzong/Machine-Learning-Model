@@ -1,20 +1,27 @@
-function [tscore,dscore,sscore,dtscore,LoRcosttest,NNcosttest] = ...
-    MasterCost(X,y,XProcessed,yProcessed,m,v,imbalance,idset,numalg, ...
-    NNlambda, LoR2lambda)
-%%
-% MasterCost computes the machine learning parameters for 5 algorithms (logistic regression, neural networks, support-vector machines, decision trees, and random forest) from a training set of images and tests the parameters on a test set in order to evaluate sensitivity, specificity, and overall accuray. 
+% MasterCost.m
+% Amanda Zong
+% Description: Computes the machine learning parameters for 5 algorithms (logistic regression, neural networks, 
+% support-vector machines, decision trees, and random forest) from a training set of images and tests the 
+% parameters on a test set in order to evaluate sensitivity, specificity, and overall accuray. 
 % Input arguments include:
-% X: a 3-dimensional matrix of features, where each row represents a unique image, each column contains the values for a unique image analysis feature, and each layer represents one of the 3 RGB color layers
+% X: a 3-dimensional matrix of features, where each row represents a unique image, each column contains the values 
+% for a unique image analysis feature, and each layer represents one of the 3 RGB color layers
 % y: a vector containing the pathological diagnoses (ground truth) of the images
-% XProcessed: a 2-dimensional matrix of features containing the statistically significant biomarkers (p-value<0.05) from the matrix X
+% XProcessed: a 2-dimensional matrix of features containing the statistically significant biomarkers (p-value<0.05) 
+% from the matrix X
 % yProcessed: contains the exact same information as the vector y (only renamed)
 % m: the number of images
 % v: a vector containing the consecutive whole numbers from 1:m
-% imbalance: set to 1 if the ratio of melanoma to nevi images is equal to 1; set to 0 if the aforementioned ratio is not equal to 1
+% imbalance: set to 1 if the ratio of melanoma to nevi images is equal to 1; set to 0 if the aforementioned ratio 
+% is not equal to 1
 % idset: a vector containing the ID numbers of the images used as a subset if imbalance = 0
 % numalg: number of algorithms used in the model (5)
 % NNlambda: the value of the regularization parameter for neural networks
 % LoR2lambda: the value of the regularization parameter for logistic regression
+
+function [tscore,dscore,sscore,dtscore,LoRcosttest,NNcosttest] = ...
+    MasterCost(X,y,XProcessed,yProcessed,m,v,imbalance,idset,numalg, ...
+    NNlambda, LoR2lambda)
 
 % Define train and test sets
 idtrain = randsample(m, round(m.*0.7));
